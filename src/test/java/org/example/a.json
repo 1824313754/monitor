@@ -1,0 +1,274 @@
+{
+  "13": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:22:10",
+      "diffMinutes": 24,
+      "delayed": 0,
+      "vehicleFactory": "13"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:46:00",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "13"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:01",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "13"
+    }
+  },
+  "14": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 06:39:43",
+      "diffMinutes": 126,
+      "delayed": 1,
+      "vehicleFactory": "14"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:46:06",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "14"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:45:45",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "14"
+    }
+  },
+  "15": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:38:46",
+      "diffMinutes": 7,
+      "delayed": 0,
+      "vehicleFactory": "15"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:46:09",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "15"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:00",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "15"
+    }
+  },
+  "16": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:38:44",
+      "diffMinutes": 7,
+      "delayed": 0,
+      "vehicleFactory": "16"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:42:48",
+      "diffMinutes": 3,
+      "delayed": 0,
+      "vehicleFactory": "16"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:10",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "16"
+    }
+  },
+  "17": {
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:45:54",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "17"
+    }
+  },
+  "18": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 07:43:51",
+      "diffMinutes": 62,
+      "delayed": 1,
+      "vehicleFactory": "18"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:02",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "18"
+    }
+  },
+  "19": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:26:03",
+      "diffMinutes": 20,
+      "delayed": 0,
+      "vehicleFactory": "19"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:16:46",
+      "diffMinutes": 29,
+      "delayed": 0,
+      "vehicleFactory": "19"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:00",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "19"
+    }
+  },
+  "processTime": "2023-06-15 08:46:13",
+  "1": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:32:46",
+      "diffMinutes": 13,
+      "delayed": 0,
+      "vehicleFactory": "1"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:12",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "1"
+    }
+  },
+  "2": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:24:05",
+      "diffMinutes": 22,
+      "delayed": 0,
+      "vehicleFactory": "2"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:46:02",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "2"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:08",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "2"
+    }
+  },
+  "4": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:36:21",
+      "diffMinutes": 9,
+      "delayed": 0,
+      "vehicleFactory": "4"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:46:05",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "4"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:01",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "4"
+    }
+  },
+  "5": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 07:27:47",
+      "diffMinutes": 78,
+      "delayed": 1,
+      "vehicleFactory": "5"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:46:05",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "5"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:06",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "5"
+    }
+  },
+  "6": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 07:23:03",
+      "diffMinutes": 83,
+      "delayed": 1,
+      "vehicleFactory": "6"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:17:38",
+      "diffMinutes": 28,
+      "delayed": 0,
+      "vehicleFactory": "6"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:13",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "6"
+    }
+  },
+  "9": {
+    "dwd": {
+      "sourceType": "dwd",
+      "ctime": "2023-06-15 08:38:47",
+      "diffMinutes": 7,
+      "delayed": 0,
+      "vehicleFactory": "9"
+    },
+    "alarm": {
+      "sourceType": "alarm",
+      "ctime": "2023-06-15 08:21:14",
+      "diffMinutes": 24,
+      "delayed": 0,
+      "vehicleFactory": "9"
+    },
+    "ods": {
+      "sourceType": "ods",
+      "ctime": "2023-06-15 08:46:01",
+      "diffMinutes": 0,
+      "delayed": 0,
+      "vehicleFactory": "9"
+    }
+  }
+}

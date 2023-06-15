@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Package Object" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2QlsUTCmzXHajN5akrhzH3cbM0o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindow运行.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/flinkcode/untitled/src/com/scala/utils",
+    "project.structure.last.edited": "全局库",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.6605336",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\flinkcode\untitled\src\com\scala\utils" />
+      <recent name="F:\flinkcode\untitled\src\com\scala" />
+      <recent name="F:\flinkcode\untitled" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="sink" />
+      <recent name="utils" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.MonitorStreaming">
+    <configuration name="ClickHouseUtils" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ClickHouseUtils" />
+      <module name="kafkaToClickhouse" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonFuncs" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="utils.CommonFuncs" />
+      <module name="kafkaToClickhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataMonitor" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="DataMonitor" />
+      <module name="kafkaToClickhouse" />
+      <option name="PROGRAM_PARAMETERS" value="--config_path F:\flinkcode\untitled\test.properties" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="kafkaToClickhouse" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonitorStreaming" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="MonitorStreaming" />
+      <module name="kafkaToClickhouse" />
+      <option name="PROGRAM_PARAMETERS" value="--config_path F:\flinkcode\untitled\test.properties" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="应用程序.CommonFuncs" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.MonitorStreaming" />
+      <item itemvalue="应用程序.ClickHouseUtils" />
+      <item itemvalue="应用程序.DataMonitor" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.MonitorStreaming" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.CommonFuncs" />
+        <item itemvalue="应用程序.DataMonitor" />
+        <item itemvalue="应用程序.ClickHouseUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="" />
+      <created>1685939520451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685939520451</updated>
+      <workItem from="1685939522189" duration="1125000" />
+      <workItem from="1685940695130" duration="16561000" />
+      <workItem from="1686011910728" duration="17679000" />
+      <workItem from="1686125067318" duration="43606000" />
+      <workItem from="1686708597858" duration="27818000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="scala.NotImplementedError" package="scala" />
+          <option name="timeStamp" value="31" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/com/scala/process/WindowResultFunction.scala</url>
+          <line>17</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
