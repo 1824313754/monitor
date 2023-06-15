@@ -10,7 +10,7 @@ import utils.{CommonFuncs, GetConfig}
 
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
 
-object MonitorStreaming {
+object MonitorStreaming extends Serializable {
   def main(args: Array[String]): Unit = {
     val tool: ParameterTool = ParameterTool.fromArgs(args)
     val fileName: String = tool.get("config_path")
@@ -84,18 +84,18 @@ object MonitorStreaming {
       if (!dataMap(vehicleData.vehicleFactory).contains(vehicleData.sourceType)) {
         dataMap(vehicleData.vehicleFactory).put(vehicleData.sourceType, new JSONObject())
       }
-      var delayed=0
+//      var delayed=0
       val json: JSONObject = new JSONObject()
       json.put("vehicleFactory", vehicleData.vehicleFactory)
       json.put("ctime", vehicleData.ctime)
       processTime= vehicleData.nowTime
       json.put("sourceType", vehicleData.sourceType)
       val diffMinutes = CommonFuncs.calculateTimeDifference(vehicleData.getCtime, vehicleData.getNowTime)
-      if(diffMinutes>=delayTime){
-        delayed=1
-      }
+//      if(diffMinutes>=delayTime){
+//        delayed=1
+//      }
       json.put("diffMinutes",diffMinutes)
-      json.put("delayed",delayed)
+//      json.put("delayed",delayed)
       // 将JSONObject添加到数据Map中
       dataMap(vehicleData.vehicleFactory)(vehicleData.sourceType) = json
     }
