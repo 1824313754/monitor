@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="监控初始化">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/MonitorStreaming.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/MonitorStreaming.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/ClickHouseSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/ClickHouseSource.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/DstreamMonitor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/DstreamMonitor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/TableMonitor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/TableMonitor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/sink/ClickHouseSink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/sink/ClickHouseSink.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/sink/RedisSink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/sink/RedisSink.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,8 +145,16 @@
       <workItem from="1685940695130" duration="16561000" />
       <workItem from="1686011910728" duration="17679000" />
       <workItem from="1686125067318" duration="43606000" />
-      <workItem from="1686708597858" duration="27818000" />
+      <workItem from="1686708597858" duration="30566000" />
     </task>
+    <task id="LOCAL-00001" summary="监控初始化">
+      <created>1686793989401</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686793989401</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +171,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="监控初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="监控初始化" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -171,11 +182,6 @@
           <properties class="scala.NotImplementedError" package="scala" />
           <option name="timeStamp" value="31" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/com/scala/process/WindowResultFunction.scala</url>
-          <line>17</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

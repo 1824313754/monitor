@@ -8,8 +8,6 @@ import org.apache.flink.streaming.api.scala._
 import sink.{ClickHouseSink, RedisSink}
 import utils.{CommonFuncs, GetConfig}
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
 
 object MonitorStreaming {
@@ -17,12 +15,10 @@ object MonitorStreaming {
     val tool: ParameterTool = ParameterTool.fromArgs(args)
     val fileName: String = tool.get("config_path")
     val params: ParameterTool = GetConfig.getProperties(fileName)
-    val redishost = params.get("redis.host")
-    val redisport = params.getInt("redis.port")
-    val redispassword = params.get("redis.password")
-
+    val delayTime = params.getInt("delay.time")
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime)
+    //TODO 数据接入流监控
     val dstreamMonitor = new DstreamMonitor
     val dstreamMonitorvalue: DataStream[ClickhouseBean] = dstreamMonitor.monitor(params, env)
     .map(line => {
@@ -42,12 +38,12 @@ object MonitorStreaming {
       clickhouseBean
     })
     dstreamMonitorvalue.addSink(new ClickHouseSink(params))
-//    dstreamMonitorvalue.addSink(new RedisSink(redishost,redisport,redispassword))
-    dstreamMonitorvalue.print()
+
+    //TODO 数据表监控
     val tableMonitor = new TableMonitor
     val tableMonitorValue: DataStream[(String,String)] = tableMonitor.monitor(params, env).map(
       lineList=>{
-        val json = convertListToJson(lineList.toList)
+        val json = convertListToJson(lineList.toList,delayTime)
         ("tableMonitor",json.toString)
       }
     )
@@ -62,12 +58,18 @@ object MonitorStreaming {
       clickhouseBean
     }).addSink(new ClickHouseSink(params))
     tableMonitorValue.addSink(new RedisSink(params))
-    env.execute("Kafka Flink Program")
+    env.execute("Flink Monitor Streaming")
   }
-  def convertListToJson(vehicleDataList: List[VehicleData]): JSONObject = {
+
+  /**
+   * 将VehicleData对象列表转换为JSONObject
+   * @param vehicleDataList
+   * @param delayTime
+   * @return
+   */
+  def convertListToJson(vehicleDataList: List[VehicleData],delayTime:Int): JSONObject = {
     // 创建最终结果的JSONObject
     val resultJson: JSONObject = new JSONObject()
-
     // 创建Map来存储数据
     val dataMap: collection.mutable.Map[String, collection.mutable.Map[String, JSONObject]] = collection.mutable.Map()
     var processTime = ""
@@ -89,7 +91,7 @@ object MonitorStreaming {
       processTime= vehicleData.nowTime
       json.put("sourceType", vehicleData.sourceType)
       val diffMinutes = CommonFuncs.calculateTimeDifference(vehicleData.getCtime, vehicleData.getNowTime)
-      if(diffMinutes>=30){
+      if(diffMinutes>=delayTime){
         delayed=1
       }
       json.put("diffMinutes",diffMinutes)

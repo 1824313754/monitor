@@ -31,7 +31,7 @@ class RedisSink(redisProperties:ParameterTool) extends RichSinkFunction[(String,
     val jedis = jedisPool.getResource
     jedis.select(2)
     jedis.set(value._1, value._2)
-    println(value._1, value._2)
+//    println(value._1, value._2)
   }
 
   override def close(): Unit = {

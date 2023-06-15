@@ -22,8 +22,7 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
     val groupId = params.get("kafka.consumer.groupid")
     properties.setProperty("bootstrap.servers", bootstrapServers)
     properties.setProperty("group.id", groupId)
-    //设置不提交偏移量
-    params.get("kafka.enable.auto.commit")
+
     val odsPattern = Pattern.compile("ods-.*")
     val kafkaConsumer = new FlinkKafkaConsumer[String](odsPattern, new SimpleStringSchema(), properties)
     kafkaConsumer.setStartFromLatest()
@@ -31,7 +30,7 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
     val result = stream
       .map(parseJson(_))
       .filter(filterByCtime(_))
-      //定义一个滚动窗口，大小位40s，统计不同厂家的车辆数量
+      //定义一个滚动窗口，大小位60s，统计不同厂家的车辆数量
       .keyBy(_.vehicleFactory)
       .window(TumblingProcessingTimeWindows.of(Time.seconds(60)))
       .aggregate(new VinCountAggregator, new WindowResultFunction)
