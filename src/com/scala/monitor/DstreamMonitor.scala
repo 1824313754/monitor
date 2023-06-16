@@ -9,6 +9,7 @@ import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
+import org.apache.kafka.clients.consumer.ConsumerConfig
 import process.{VinCountAggregator, WindowResultFunction}
 import utils.CommonFuncs.mkctime
 
@@ -22,6 +23,7 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
     val groupId = params.get("kafka.consumer.groupid")
     properties.setProperty("bootstrap.servers", bootstrapServers)
     properties.setProperty("group.id", groupId)
+    properties.setProperty(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "60000"); // 设置会话超时时间为60秒
 
     val odsPattern = Pattern.compile("ods-.*")
     val kafkaConsumer = new FlinkKafkaConsumer[String](odsPattern, new SimpleStringSchema(), properties)

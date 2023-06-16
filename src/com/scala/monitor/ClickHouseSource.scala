@@ -25,7 +25,7 @@ class ClickHouseSource(connInfo: String, username: String, password: String) ext
       val monitor = new TableMonitor
       val list = monitor.tableMonitor(connection)
       ctx.collect(list)
-      Thread.sleep(60000)
+      Thread.sleep(10000)
     }
   }
 
