@@ -5,7 +5,7 @@ import monitor.{DstreamMonitor, TableMonitor}
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
-import sink.{ClickHouseSink}
+import sink.{ClickHouseSink, RedisSink}
 import utils.{CommonFuncs, GetConfig}
 
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
