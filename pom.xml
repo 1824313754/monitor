@@ -56,7 +56,7 @@
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka_${scala.version}</artifactId>
+            <artifactId>flink-sql-connector-kafka_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <!-- flink客户端 -->

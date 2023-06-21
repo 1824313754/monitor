@@ -5,11 +5,11 @@ import bean.VehicleData
 import com.alibaba.fastjson.JSON
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.java.utils.ParameterTool
+import org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
-import org.apache.kafka.clients.consumer.ConsumerConfig
 import process.{VinCountAggregator, WindowResultFunction}
 import utils.CommonFuncs.mkctime
 

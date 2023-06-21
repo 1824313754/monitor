@@ -24,7 +24,7 @@ class ClickHouseSource(connInfo: String, username: String, password: String,tabl
       val monitor = new TableMonitor
       val list = monitor.tableMonitor(connection)
       ctx.collect(list)
-      println(tableSeconds)
+//      println(tableSeconds)
       Thread.sleep(tableSeconds)
     }
   }
