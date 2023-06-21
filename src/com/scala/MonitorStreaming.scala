@@ -5,7 +5,7 @@ import monitor.{DstreamMonitor, TableMonitor}
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
-import sink.{ClickHouseSink, RedisSink}
+import sink.{ClickHouseSink}
 import utils.{CommonFuncs, GetConfig}
 
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
@@ -15,7 +15,7 @@ object MonitorStreaming extends Serializable {
     val tool: ParameterTool = ParameterTool.fromArgs(args)
     val fileName: String = tool.get("config_path")
     val params: ParameterTool = GetConfig.getProperties(fileName)
-    val delayTime = params.getInt("delay.time")
+//    val delayTime = params.getInt("delay.time")
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime)
     //TODO 数据接入流监控
@@ -43,7 +43,7 @@ object MonitorStreaming extends Serializable {
     val tableMonitor = new TableMonitor
     val tableMonitorValue: DataStream[(String,String)] = tableMonitor.monitor(params, env).map(
       lineList=>{
-        val json = convertListToJson(lineList.toList,delayTime)
+        val json = convertListToJson(lineList.toList)
         ("tableMonitor",json.toString)
       }
     )
@@ -57,7 +57,7 @@ object MonitorStreaming extends Serializable {
       val clickhouseBean = json.toJavaObject(classOf[ClickhouseBean])
       clickhouseBean
     }).addSink(new ClickHouseSink(params))
-    tableMonitorValue.addSink(new RedisSink(params))
+//    tableMonitorValue.addSink(new RedisSink(params))
     env.execute("Flink Monitor Streaming")
   }
 
@@ -67,7 +67,7 @@ object MonitorStreaming extends Serializable {
    * @param delayTime
    * @return
    */
-  def convertListToJson(vehicleDataList: List[VehicleData],delayTime:Int): JSONObject = {
+  def convertListToJson(vehicleDataList: List[VehicleData]): JSONObject = {
     // 创建最终结果的JSONObject
     val resultJson: JSONObject = new JSONObject()
     // 创建Map来存储数据

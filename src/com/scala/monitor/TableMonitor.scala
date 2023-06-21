@@ -16,7 +16,8 @@ class TableMonitor extends Monitor[DataStream[util.ArrayList[VehicleData]]] {
     val connInfo = params.get("clickhouse.conn")
     val username = params.get("clickhouse.user")
     val password = params.get("clickhouse.passwd")
-    val source = new ClickHouseSource(connInfo, username, password)
+    val tableSeconds= params.getInt("table.seconds")*1000
+    val source = new ClickHouseSource(connInfo, username, password,tableSeconds)
     val value: DataStream[util.ArrayList[VehicleData]] = env.addSource(source)
     value
   }

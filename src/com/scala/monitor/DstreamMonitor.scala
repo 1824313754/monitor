@@ -23,6 +23,7 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
     val groupId = params.get("kafka.consumer.groupid")
     properties.setProperty("bootstrap.servers", bootstrapServers)
     properties.setProperty("group.id", groupId)
+    val datainput=params.getInt("datainput.seconds")
     properties.setProperty(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "60000"); // 设置会话超时时间为60秒
 
     val odsPattern = Pattern.compile("ods-.*")
@@ -34,7 +35,7 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
       .filter(filterByCtime(_))
       //定义一个滚动窗口，大小位60s，统计不同厂家的车辆数量
       .keyBy(_.vehicleFactory)
-      .window(TumblingProcessingTimeWindows.of(Time.seconds(60)))
+      .window(TumblingProcessingTimeWindows.of(Time.seconds(datainput)))
       .aggregate(new VinCountAggregator, new WindowResultFunction)
     result
   }
@@ -58,7 +59,7 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
   //TODO 距离当前时间20s内的数据都算实时数据
   def filterByCtime(data: VehicleData): Boolean = {
     val currentTime = System.currentTimeMillis() / 1000
-    val low = currentTime - 20
+    val low = currentTime - 30
     data.ctimeTimeStemp > low
   }
 }

@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/MonitorStreaming.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/MonitorStreaming.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/ClickHouseSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/ClickHouseSource.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/DstreamMonitor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/DstreamMonitor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/TableMonitor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/TableMonitor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/sink/ClickHouseSink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/sink/ClickHouseSink.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/sink/RedisSink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/sink/RedisSink.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +147,8 @@
       <workItem from="1686125067318" duration="43606000" />
       <workItem from="1686708597858" duration="37844000" />
       <workItem from="1686822070186" duration="8434000" />
-      <workItem from="1686881232030" duration="8783000" />
+      <workItem from="1686881232030" duration="17911000" />
+      <workItem from="1687308699314" duration="2557000" />
     </task>
     <task id="LOCAL-00001" summary="监控初始化">
       <created>1686793989401</created>
@@ -169,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686907672906</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="优化">
+      <created>1687144712406</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687144712406</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,11 +214,6 @@
           <properties class="scala.NotImplementedError" package="scala" />
           <option name="timeStamp" value="31" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/com/scala/sink/RedisSink.scala</url>
-          <line>7</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

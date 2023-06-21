@@ -8,9 +8,8 @@ import ru.yandex.clickhouse.{BalancedClickhouseDataSource, ClickHouseConnection}
 
 import java.util
 
-class ClickHouseSource(connInfo: String, username: String, password: String) extends RichSourceFunction[util.ArrayList[VehicleData]] {
+class ClickHouseSource(connInfo: String, username: String, password: String,tableSeconds:Int) extends RichSourceFunction[util.ArrayList[VehicleData]] {
   private var connection: ClickHouseConnection = _
-
   override def open(parameters: Configuration): Unit = {
     val clickPro = new ClickHouseProperties()
     clickPro.setUser(username)
@@ -25,7 +24,8 @@ class ClickHouseSource(connInfo: String, username: String, password: String) ext
       val monitor = new TableMonitor
       val list = monitor.tableMonitor(connection)
       ctx.collect(list)
-      Thread.sleep(10000)
+      println(tableSeconds)
+      Thread.sleep(tableSeconds)
     }
   }
 
