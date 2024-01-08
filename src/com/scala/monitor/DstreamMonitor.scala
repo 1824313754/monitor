@@ -14,7 +14,7 @@ import process.{VinCountAggregator, WindowResultFunction}
 import utils.CommonFuncs.mkctime
 
 import java.util.Properties
-import java.util.regex.Pattern
+import scala.collection.JavaConverters.bufferAsJavaListConverter
 
 class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
   override def monitor(params: ParameterTool, env: StreamExecutionEnvironment): DataStream[(String, Long, String)] = {
@@ -25,14 +25,15 @@ class DstreamMonitor extends Monitor[DataStream[(String, Long, String)]]{
     properties.setProperty("group.id", groupId)
     val datainput=params.getInt("datainput.seconds")
     properties.setProperty(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "60000"); // 设置会话超时时间为60秒
-
-    val odsPattern = Pattern.compile("ods-.*")
-    val kafkaConsumer = new FlinkKafkaConsumer[String](odsPattern, new SimpleStringSchema(), properties)
+    //读取kafka的topic列表
+    val topicString = params.get("kafka.topic")
+    val topicList: java.util.List[String] = topicString.split(",").toBuffer.asJava
+    val kafkaConsumer = new FlinkKafkaConsumer[String](topicList, new SimpleStringSchema(), properties)
     kafkaConsumer.setStartFromLatest()
     val stream = env.addSource(kafkaConsumer)
     val result = stream
       .map(parseJson(_))
-      .filter(filterByCtime(_))
+//      .filter(filterByCtime(_))
       //定义一个滚动窗口，大小位60s，统计不同厂家的车辆数量
       .keyBy(_.vehicleFactory)
       .window(TumblingProcessingTimeWindows.of(Time.seconds(datainput)))

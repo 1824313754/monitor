@@ -5,10 +5,12 @@ import monitor.{DstreamMonitor, TableMonitor}
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
-import sink.{ClickHouseSink}
+import sink.ClickHouseSink
 import utils.{CommonFuncs, GetConfig}
 
-import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
+import scala.collection.JavaConversions.asScalaBuffer
+
+
 
 object MonitorStreaming extends Serializable {
   def main(args: Array[String]): Unit = {
