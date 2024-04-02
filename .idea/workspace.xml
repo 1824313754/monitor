@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="屏蔽redis">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+    <list default="true" id="77256cf9-c47a-4745-89e6-f7d91d4345b8" name="变更" comment="迁移到生产环境">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/scala/MonitorStreaming.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/MonitorStreaming.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/DstreamMonitor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/DstreamMonitor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/ClickHouseSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/ClickHouseSource.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/monitor/TableMonitor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/monitor/TableMonitor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/scala/sink/ClickHouseSink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/scala/sink/ClickHouseSink.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +172,29 @@
       <workItem from="1686881232030" duration="17911000" />
       <workItem from="1687308699314" duration="8943000" />
       <workItem from="1704696678356" duration="2193000" />
-      <workItem from="1704699324247" duration="870000" />
+      <workItem from="1704699324247" duration="972000" />
+      <workItem from="1704700357716" duration="4283000" />
+      <workItem from="1704772715599" duration="2468000" />
+      <workItem from="1705298474756" duration="559000" />
+      <workItem from="1705366405649" duration="1155000" />
+      <workItem from="1705457557634" duration="471000" />
+      <workItem from="1705458062490" duration="235000" />
+      <workItem from="1705458314139" duration="559000" />
+      <workItem from="1705459828899" duration="1724000" />
+      <workItem from="1705548549601" duration="545000" />
+      <workItem from="1705561150540" duration="571000" />
+      <workItem from="1705625282641" duration="592000" />
+      <workItem from="1705890971398" duration="138000" />
+      <workItem from="1705891159008" duration="540000" />
+      <workItem from="1705912339901" duration="142000" />
+      <workItem from="1706000617570" duration="2295000" />
+      <workItem from="1706067710375" duration="577000" />
+      <workItem from="1706079591432" duration="4000000" />
+      <workItem from="1706238134567" duration="1702000" />
+      <workItem from="1708573571494" duration="626000" />
+      <workItem from="1708582219439" duration="606000" />
+      <workItem from="1712038401579" duration="858000" />
+      <workItem from="1712039328514" duration="1344000" />
     </task>
     <task id="LOCAL-00001" summary="监控初始化">
       <created>1686793989401</created>
@@ -217,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687311949480</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="迁移到生产环境">
+      <option name="closed" value="true" />
+      <created>1704700254817</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704700254817</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +267,8 @@
     <MESSAGE value="监控初始化" />
     <MESSAGE value="优化" />
     <MESSAGE value="屏蔽redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="屏蔽redis" />
+    <MESSAGE value="迁移到生产环境" />
+    <option name="LAST_COMMIT_MESSAGE" value="迁移到生产环境" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

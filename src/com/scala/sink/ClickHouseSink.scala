@@ -25,7 +25,13 @@ class ClickHouseSink(properties :ParameterTool) extends RichSinkFunction[Clickho
   override def invoke(alarmMonitor: ClickhouseBean, context: Context): Unit = {
     val statement = connection.createStatement()
     val query: String = sqlProducer(tableName, alarmMonitor)
-    statement.executeUpdate(query)
+    try {
+      statement.executeUpdate(query)
+    }catch {
+      case e: Exception =>
+        e.printStackTrace()
+    }
+
   }
 
   override def close(): Unit = {
