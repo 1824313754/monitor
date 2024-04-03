@@ -7,6 +7,7 @@ import org.apache.flink.api.scala.createTypeInformation
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import ru.yandex.clickhouse.ClickHouseConnection
 
+import java.sql.ResultSet
 import java.time.format.DateTimeFormatter
 import java.time.{LocalDate, LocalDateTime}
 import java.util
@@ -28,11 +29,6 @@ class TableMonitor extends Monitor[DataStream[util.ArrayList[VehicleData]]] {
     val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
     val sql =
       s"""
-         |SELECT vehicleFactory,max(ctime) as maxctime, 'ods' AS source_type,'$currentTime' AS currentTime
-         |FROM source_gx.ods_all
-         |WHERE day_of_year = '$currentDate' AND ctime <= '$currentTime'
-         |GROUP BY vehicleFactory,source_type,currentTime
-         |UNION ALL
          |SELECT vehicleFactory,max(ctime) as maxctime, 'dwd' AS source_type,'$currentTime' AS currentTime
          |FROM warehouse_gx.dwd_all
          |WHERE day_of_year = '$currentDate' AND ctime <= '$currentTime'
@@ -44,17 +40,25 @@ class TableMonitor extends Monitor[DataStream[util.ArrayList[VehicleData]]] {
          |GROUP BY vehicle_factory,source_type,currentTime
          |""".stripMargin
 
-    val sql2= s"""
-                 |SELECT vehicleFactory,max(ctime) as maxctime, 'ods' AS source_type,'$currentTime' AS currentTime
-                 |FROM source_gx.ods_all
-                 |WHERE day_of_year = '$currentDate' AND ctime <= '$currentTime'
-                 |GROUP BY vehicleFactory,source_type,currentTime
-                 |""".stripMargin
+    val sql2 =
+      s"""
+         |SELECT vehicleFactory,max(ctime) as maxctime, 'ods' AS source_type,'$currentTime' AS currentTime
+         |FROM source_gx.ods_all
+         |WHERE day_of_year = '$currentDate' AND ctime <= '$currentTime'
+         |GROUP BY vehicleFactory,source_type,currentTime
+         |""".stripMargin
 
     val statement = connection.createStatement()
     val statement2 = connection2.createStatement()
-    val resultSet = statement.executeQuery(sql)
-    val resultSet2 = statement2.executeQuery(sql2)
+    var resultSet: ResultSet = null
+    var resultSet2: ResultSet = null
+    try {
+      resultSet = statement.executeQuery(sql)
+      resultSet2 = statement2.executeQuery(sql2)
+    } catch {
+      case e: Exception =>
+        e.printStackTrace()
+    }
     //定义一个list
     val list = new util.ArrayList[VehicleData]()
     while (resultSet.next()) {
@@ -69,17 +73,19 @@ class TableMonitor extends Monitor[DataStream[util.ArrayList[VehicleData]]] {
       vehicleData.setNowTime(currentTime)
       list.add(vehicleData)
     }
-    while (resultSet2.next()) {
-      val vehicleData = new VehicleData
-      val vehicleFactory = resultSet2.getString("vehicleFactory")
-      val ctime = resultSet2.getString("maxctime")
-      val source_type = resultSet2.getString("source_type")
-      val currentTime = resultSet2.getString("currentTime")
-      vehicleData.setVehicleFactory(vehicleFactory)
-      vehicleData.setCtime(ctime)
-      vehicleData.setSourceType(source_type)
-      vehicleData.setNowTime(currentTime)
-      list.add(vehicleData)
+    if (resultSet2 != null) {
+      while (resultSet2.next()) {
+        val vehicleData = new VehicleData
+        val vehicleFactory = resultSet2.getString("vehicleFactory")
+        val ctime = resultSet2.getString("maxctime")
+        val source_type = resultSet2.getString("source_type")
+        val currentTime = resultSet2.getString("currentTime")
+        vehicleData.setVehicleFactory(vehicleFactory)
+        vehicleData.setCtime(ctime)
+        vehicleData.setSourceType(source_type)
+        vehicleData.setNowTime(currentTime)
+        list.add(vehicleData)
+      }
     }
     list
   }

@@ -12,8 +12,8 @@
     <url>http://www.example.com</url>
 
     <properties>
-        <flink.version>1.13.0</flink.version>
-        <scala.version>2.11</scala.version>
+        <flink.version>1.12.0</flink.version>
+        <scala.version>2.12</scala.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>

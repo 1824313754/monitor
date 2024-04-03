@@ -2,8 +2,11 @@
 import bean.{ClickhouseBean, VehicleData}
 import com.alibaba.fastjson.{JSON, JSONObject}
 import monitor.{DstreamMonitor, TableMonitor}
+import org.apache.flink.api.common.restartstrategy.RestartStrategies
 import org.apache.flink.api.java.utils.ParameterTool
+import org.apache.flink.runtime.state.filesystem.FsStateBackend
 import org.apache.flink.streaming.api.TimeCharacteristic
+import org.apache.flink.streaming.api.environment.CheckpointConfig
 import org.apache.flink.streaming.api.scala._
 import sink.ClickHouseSink
 import utils.{CommonFuncs, GetConfig}
@@ -14,12 +17,25 @@ import scala.collection.JavaConversions.asScalaBuffer
 
 object MonitorStreaming extends Serializable {
   def main(args: Array[String]): Unit = {
-    val tool: ParameterTool = ParameterTool.fromArgs(args)
-    val fileName: String = tool.get("config_path")
-    val params: ParameterTool = GetConfig.getProperties(fileName)
+    val params: ParameterTool = ParameterTool.fromArgs(args)
+//    val fileName: String = tool.get("config_path")
+//    val params: ParameterTool = GetConfig.getProperties(fileName)
 //    val delayTime = params.getInt("delay.time")
     val env = StreamExecutionEnvironment.getExecutionEnvironment
-    env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime)
+    // 设置checkpoint
+    env.enableCheckpointing(30000)
+    // 设置重启策略，3次重启，每次间隔5秒// 设置重启策略，3次重启，每次间隔5秒
+    env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 10000))
+    // 设置最大checkpoint并行度// 设置最大checkpoint并行度
+    env.getCheckpointConfig.setMaxConcurrentCheckpoints(1)
+    // 设置checkpoint超时时间// 设置checkpoint超时时间
+    env.getCheckpointConfig.setCheckpointTimeout(60000)
+    // 设置RocksDBStateBackend,增量快照// 设置RocksDBStateBackend,增量快照
+    env.setStateBackend(new FsStateBackend("hdfs://hdfscluster:8020/flink/battery/monitor"))
+    // 设置任务取消时保留checkpoint// 设置任务取消时保留checkpoint
+    env.getCheckpointConfig.enableExternalizedCheckpoints(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION)
+
+
     //TODO 数据接入流监控
     val dstreamMonitor = new DstreamMonitor
     val dstreamMonitorvalue: DataStream[ClickhouseBean] = dstreamMonitor.monitor(params, env)
